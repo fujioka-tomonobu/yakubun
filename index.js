@@ -205,13 +205,13 @@ var event = new function(){
 		num2 = v[1] * yakusu;
 		
 		$('#game-text').html(
-		  "<table align='center' style='text-align:center;'><tr><td style='border-bottom:10px solid;'><span style='padding:0px 30px 0px 30px;'>" + num1 +
+		  "<table align='center' style='text-align:center;'><tr><td style='border-bottom:5px solid;'><span style='padding:0px 30px 0px 30px;'>" + num1 +
 		  "</span></td></tr><tr><td><span style='padding:0px 30px 0px 30px;'>" + num2 +
 		  "</span></td></tr></table>"
 		);
 		
 		$('#answer').html(
-		  "<table align='center' style='text-align:center;'><tr><td style='border-bottom:10px solid;'><span style='padding:0px 30px 0px 30px;'>" + v[0] +
+		  "<table align='center' style='text-align:center;'><tr><td style='border-bottom:5px solid;'><span style='padding:0px 30px 0px 30px;'>" + v[0] +
 		  "</span></td></tr><tr><td><span style='padding:0px 30px 0px 30px;'>" + v[1] +
 		  "</span></td></tr></table>"
 		);
