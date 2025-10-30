@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>わり算グルメレース</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+		<script src="index.js?v=23" ></script>
+		<link href="index.css" rel="stylesheet" />
+		
+		<style>
+			img.dedede {
+				width : 20%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 20%;
+				left: 50%;
+				margin: auto;
+			}
+			img.kirby {
+				width : 15%;
+				position: absolute;
+				top: 0;
+				right: 70%;
+				bottom: 20%;
+				left: 0;
+				margin: auto;
+			}
+			img.title {
+				width : 70%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 20%;
+				left: 0;
+				margin: auto;
+			}
+			
+			div.buttonArea {
+				position:fixed;
+				top: 75%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				text-align : center;
+			}
+			
+			a.btn {
+				font-size : 130%;
+				padding : 20px 30px 20px 30px;
+				margin-right : 5px;
+				margin-left : 5px;
+				cursor : pointer;
+			}
+			
+			.btn--orange,
+			a.btn--orange {
+				color: #fff;
+				background-color: #eb6100;
+			}
+			a.btn--radius {
+				border-radius: 100vh;
+			}
+			
+			div#game, div#win, div#lose {
+				display: table;
+				width: 100vw;
+				height: 85vh;
+			}
+			#game-text {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size : 750%;
+			}
+			#answer {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size : 750%;
+				color : red;
+			}
+			
+			img.win-kirby {
+				width : 10%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom:60%;
+				left: 0;
+				margin: auto;
+			}
+			img.win-dedede {
+				width : 13%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 55%;
+				left: 0;
+				margin: auto;
+			}
+			
+			#last-message {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-size : 400%;
+			}
+			
+			div.raceArea {
+				position:fixed;
+				top: 10%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height : 15%;
+				background-image : url(img/stage.png);
+				background-repeat : repeat-x;
+			}
+			
+			img.race-kirby {
+				width : 4.5%;
+				position:fixed;
+				top: 10%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				animation: shake 2s infinite;
+			}
+			img.race-dedede {
+				width : 5%;
+				position:fixed;
+				top: 10%;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index : -1;
+				animation: shake 2s infinite;
+			}
+			@keyframes shake {
+				0% {
+					transform: rotate(20deg);
+				}
+				50% {
+					transform: rotate(-20deg);
+				}
+				100% {
+					transform: rotate(20deg);
+				}
+			}
+		</style>
+		
+	</head>
+	<body>
+		<audio id="audio" src="audio/race.m4a" loop></audio>
+		<audio id="audio-win" src="audio/win.mp3"></audio>
+		<audio id="audio-lose" src="audio/lose.mp3"></audio>
+		
+		<div id="index">
+			<img src="img/dedede.webp?v=1" class="dedede">
+			<img src="img/kirby.gif" class="kirby">
+			<img src="img/title.png" class="title">
+			<div class="buttonArea">
+				<a id="easy" class="btn btn--orange btn--radius">かんたん</a>
+				<a id="normal" class="btn btn--orange btn--radius">ふつう</a>
+				<a id="hard" class="btn btn--orange btn--radius">むずかしい</a>
+				<a id="veryhard" class="btn btn--orange btn--radius">げきむず</a>
+			</div>
+		</div>
+		
+		<div id="game">
+			<div class="raceArea">
+				<img src="img/kirby.gif?v=1" class="race-kirby" id="race-kirby">
+				<img src="img/dedede.webp?v=1" class="race-dedede" id="race-dedede">
+			</div>
+			<div id="game-text"></div>
+			<div id="answer"></div>
+			<div class="buttonArea">
+				<a id="next" class="btn btn--orange btn--radius">　つ　ぎ　へ　⇒　</a>
+			</div>
+		</div>
+		
+		<div id="win">
+			<img src="img/kirby.gif?v=1" class="win-kirby">
+			<div id="last-message">カービィの勝ち <span class="time"></span></div>
+			<div class="buttonArea">
+				<a class="init btn btn--orange btn--radius">さいしょから</a>
+			</div>
+		</div>
+		
+		<div id="lose">
+			<img src="img/dedede.webp?v=1" class="win-dedede">
+			<div id="last-message">デデデの勝ち <span class="time"></span></div>
+			<div class="buttonArea">
+				<a class="init btn btn--orange btn--radius">さいしょから</a>
+			</div>
+		</div>
+		
+	</body>
+</html>
