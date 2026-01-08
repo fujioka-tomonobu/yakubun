@@ -242,7 +242,7 @@ var event = new function(){
 
 				clearInterval(dededeAnimeId);
 				
-				if(カービ移動回数 >= デデデ移動回数) {
+				if(カービ移動回数 > デデデ移動回数) {
 					event.win();
 				}else{
 					event.lose();
