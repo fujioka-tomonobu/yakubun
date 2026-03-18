@@ -190,8 +190,8 @@ var event = new function(){
 		
 		// 分母分子のランダム採番
 		while(true) {
-			num1 = Math.floor(Math.random() * (分子_第一項範囲[1] - 分子_第一項範囲[0])) + 分子_第一項範囲[0];
-			num2 = Math.floor(Math.random() * (分母_第二項範囲[1] - 分母_第二項範囲[0])) + 分母_第二項範囲[0];
+			num1 = Math.floor(Math.random() * (分子_第一項範囲[1] - 分子_第一項範囲[0] + 1)) + 分子_第一項範囲[0];
+			num2 = Math.floor(Math.random() * (分母_第二項範囲[1] - 分母_第二項範囲[0] + 1)) + 分母_第二項範囲[0];
 			if(num1 < num2) {
 				break;
 			}
@@ -199,7 +199,7 @@ var event = new function(){
 		
 		// 発行の時点で約分できないか確認
 		var v = this.reduction(num1, num2);
-		var yakusu = Math.floor(Math.random() * (約数_範囲[1] - 約数_範囲[0])) + 約数_範囲[0];
+		var yakusu = Math.floor(Math.random() * (約数_範囲[1] - 約数_範囲[0] + 1)) + 約数_範囲[0];
 		
 		num1 = v[0] * yakusu;
 		num2 = v[1] * yakusu;
